@@ -11,7 +11,7 @@ export default function Footer() {
 
 
         position: absolute;
-        width: 99vw;
+        width: 100vw;
         text-align: center;
         bottom: 36px;
         font-family: Roboto Light;
