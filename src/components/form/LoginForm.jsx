@@ -1,7 +1,9 @@
 import React, { useRef } from 'react'
 import { Form } from '@unform/web'
 import * as Yup from 'yup'
-import Input from './form/Input'
+import Input from './Input'
+import styled from 'styled-components'
+import "../style/LoginForm.css"
  
 
 export default function LoginForm() { 
@@ -42,13 +44,29 @@ export default function LoginForm() {
         }
     }
 
+    const Button = styled.div`
+        @font-face {
+            font-family: 'Roboto Bold';
+            src: url('/fonts/Roboto/Roboto-Bold.ttf');
+        }
+
+       .button {
+        font-family: Roboto Bold;
+        font-style: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #FFFFFF;
+       }
+    `
+
     return(
         <React.Fragment>
-            <Form ref={formRef} onSubmit={handleSubmit}>
-                <Input type="email" name="email" placeholder="Email" />
-                <Input type="password" name="password" placeholder="Senha" />
-
-                <button type="submit">ENTRAR</button>
+            <Form className="form" ref={formRef} onSubmit={handleSubmit}>
+                <Input className="input" type="email" name="email" placeholder="Email" />
+                <Input className="input" type="password" name="password" placeholder="Senha" />
+                <Button>
+                    <button className="button" type="submit">ENTRAR</button>
+                </Button>
             </Form>
         </React.Fragment>
     )
