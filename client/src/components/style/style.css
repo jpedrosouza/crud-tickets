@@ -1,18 +1,14 @@
-.form {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    height: 230px;
-}
-
-.forms {
-    display: grid;
-    justify-items: center;
-    align-items: center;
+.register-form {
+    display: contents;
     height: 281px;
 }
 
-.input {
+.login-form {
+    display: contents;
+    height: 130px;
+}
+
+.form-field {
     width: 292px;
     height: 30px;
     background: #4F4F4F;
@@ -22,22 +18,23 @@
     color: white;
 }
 
-.inputName {
-    width: 131px;
-    height: 30px;
-    background: #4F4F4F;
-    border-radius: 5px;
-    border: none;
-    padding-left: 10px;
-    color: white;
+.form-error {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    color: red;
 }
 
-.button {
+button {
     width: 100px;
     height: 30px;
     background: #4F4F4F;
     border-radius: 5px;
     border: none;
+    color: white;
+    font-size: 11px;
+    line-height: 13px;
+    cursor: pointer;
 }
 
 ::placeholder {

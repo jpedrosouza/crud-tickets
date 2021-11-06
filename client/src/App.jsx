@@ -5,8 +5,8 @@ import Register from './pages/Register';
 export default function App() {
   return (
     <React.Fragment>
-      {/*<Login />*/}
-      <Register />
+      <Login />
+      {/*<Register />*/}
     </React.Fragment>
   );
 }
