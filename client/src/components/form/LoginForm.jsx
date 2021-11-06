@@ -3,11 +3,19 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import styled from 'styled-components'
 import '../style/style.css'
+import Axios from 'axios'
 
 
 export default function LoginForm() {
 
-    const handleClickLogin = (values) => console.log(values)
+    const handleClickLogin = (values) => {
+        Axios.post('http://localhost:3001/login', {
+            email: values.email,
+            password: values.password, 
+        }).then((response) => {
+            console.log(response)
+        })
+    }
 
     const validationLogin = yup.object().shape({
         email: yup.string().email('Insira um e-mail válido').required('O e-mail é orbigatório'),
