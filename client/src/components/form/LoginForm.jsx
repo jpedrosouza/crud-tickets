@@ -13,7 +13,7 @@ export default function LoginForm() {
             email: values.email,
             password: values.password, 
         }).then((response) => {
-            console.log(response)
+            alert(response.data.msg);
         })
     }
 

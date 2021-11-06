@@ -15,7 +15,7 @@ export default function RegisterForm() {
            email: values.email,
            password: values.password,
         }).then((response) => {
-            console.log(response);
+            alert(response.data.msg);
         })
     }
 
