@@ -3,11 +3,21 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import styled from 'styled-components'
 import '../style/style.css'
+import Axios from 'axios'
 
 
 export default function RegisterForm() {
 
-    const handleClickRegister = (values) => console.log(values)
+    const handleClickRegister = (values) => {
+        Axios.post("http://localhost:3001/register", {
+           name: values.name,
+           lastName: values.lastName,
+           email: values.email,
+           password: values.password,
+        }).then((response) => {
+            console.log(response);
+        })
+    }
 
     const validationRegister = yup.object().shape({
         name: yup.string().min(2, 'O nome deve conter no mínimo duas letras').required('O nome é obrigatório'),
