@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import styled from 'styled-components'
-import '../style/registerForm.css'
+import '../style/style.css'
 import Axios from 'axios'
 
 

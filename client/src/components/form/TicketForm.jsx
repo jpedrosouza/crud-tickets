@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import styled from 'styled-components'
-import "../style/ticketForm.css"
+import "../style/style.css"
 import * as yup from 'yup'
 import Axios from 'axios'
 
