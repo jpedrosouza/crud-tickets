@@ -57,6 +57,7 @@ export default function Register() {
                 src: url('/fonts/Roboto/Roboto-Black.ttf');
             }
 
+            text-decoration: none;
             font-family: Roboto Black;
             font-style: normal;
             font-weight: 900;

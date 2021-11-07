@@ -57,6 +57,7 @@ export default function Login() {
                 src: url('/fonts/Roboto/Roboto-Black.ttf');
             }
 
+            text-decoration: none;
             font-family: Roboto Black;
             font-style: normal;
             font-weight: 900;
@@ -69,14 +70,14 @@ export default function Login() {
 
     return(
         <React.Fragment>
-            <Main>
-                <Forms>
-                    <Text>Ticket Database</Text>
-                    <LoginForm  />
-                    <SubText>Não possue uma conta? <span>Cadastre-se</span> </SubText>
-                </Forms>
-            </Main>
-            <Footer />
+                <Main>
+                    <Forms>
+                        <Text>Ticket Database</Text>
+                        <LoginForm  />
+                        <SubText>Não possue uma conta? <span>Cadastre-se</span> </SubText>
+                    </Forms>
+                </Main>
+                <Footer />
         </React.Fragment>
     )
 }

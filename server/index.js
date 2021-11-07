@@ -65,6 +65,25 @@ app.post('/login', (req, res) => {
     })
 })
 
+app.post('/ticket', (req, res) => {
+    const evento = req.body.evento
+    const artista = req.body.artista
+    const local = req.body.local
+    const descricao = req.body.descricao
+    const data = req.body.data
+    const preco = req.body.preco
+    const url = req.body.url
+
+    db.query("INSERT INTO tickets (evento, artista, local, descricao, data, preco, url) VALUES (?,?,?,?,?,?,?)", [evento, artista, local, descricao, data, preco, url], (err, response) => {
+        if (err) {
+            res.send(err)
+            return
+        }
+
+        res.send({ msg: 'Evento registrado com sucesso' })
+    })
+})
+
 app.listen(3001, () => {
     console.log('running on port 3001')
 })
