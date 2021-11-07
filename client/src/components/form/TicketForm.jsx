@@ -28,7 +28,7 @@ export default function TicketForm() {
         descricao: yup.string().min(2, 'A descrição deve conter no mínimo dois caracteres').required('A descrição é orbigatório'),
         data: yup.string().required('A data é orbigatório'),
         preco: yup.string().required('O preço é orbigatório'),
-        url: yup.string().url('Insira uma URL válida').required('A url é orbigatório'),
+        url: yup.string().url('Insira uma URL válida'),
     })
 
     const TicketFormGroup = styled.div`
@@ -50,6 +50,7 @@ export default function TicketForm() {
         justify-items: center;
         grid-template-columns: 1fr 1fr 1fr;
         width: 88.15%;
+        height: 96px;
 
         .form-erro {
             display: flex;
@@ -61,20 +62,20 @@ export default function TicketForm() {
 
         ::placeholder {
             /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: white;
+            color: black;
             opacity: 0.7;
             /* Firefox */
         }
         
          :-ms-input-placeholder {
             /* Internet Explorer 10-11 */
-            color: white;
+            color: black;
             opacity: 0.7;
         }
         
          ::-ms-input-placeholder {
             /* Microsoft Edge */
-            color: white;
+            color: black;
             opacity: 0.7;
         }
     `
@@ -121,6 +122,11 @@ export default function TicketForm() {
             height: 20px;
             background: #EB5757;
             border-radius: 5px;
+            transition: 0.5s;
+        }
+
+        .del:hover {
+            background: #F07B7B;
         }
     `
 
