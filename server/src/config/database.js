@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-
+// settings to connect to MySQL
 module.exports = class DatabaseConfig {
     connectDatabase() {
         const db = mysql.createPool({

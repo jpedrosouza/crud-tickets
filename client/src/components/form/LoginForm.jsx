@@ -5,9 +5,8 @@ import styled from 'styled-components'
 import '../style/style.css'
 import Axios from 'axios'
 
-
 export default function LoginForm() {
-
+    // getting values ​​from the login form
     const handleClickLogin = (values) => {
         Axios.post('http://localhost:3001/login', {
             email: values.email,
@@ -16,17 +15,17 @@ export default function LoginForm() {
             alert(response.data.msg);
         })
     }
-
-    const validationLogin = yup.object().shape({
+    // start form validations with yup
+    const validationLogin = yup.object().shape({ 
         email: yup.string().email('Insira um e-mail válido').required('O e-mail é orbigatório'),
         password: yup.string().min(8, 'A senha deve conter no mínimo 8 caracteres').required('A senha é obrigatória')
     })
-
+    // styling used styled components
     const LoginFormGroup = styled.div`
         display: grid;
         align-items: center
     `
-
+    // creating form with formik
     return (
         <React.Fragment>
             <Formik initialValues={{}} onSubmit={handleClickLogin} validationSchema={validationLogin}>

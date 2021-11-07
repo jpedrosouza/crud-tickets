@@ -5,9 +5,8 @@ import styled from 'styled-components'
 import '../style/style.css'
 import Axios from 'axios'
 
-
 export default function RegisterForm() {
-
+    // getting values ​​from the register form
     const handleClickRegister = (values) => {
         Axios.post('http://localhost:3001/register', {
            name: values.name,
@@ -18,7 +17,7 @@ export default function RegisterForm() {
             alert(response.data.msg);
         })
     }
-
+    // start form validations with yup
     const validationRegister = yup.object().shape({
         name: yup.string().min(2, 'O nome deve conter no mínimo duas letras').required('O nome é obrigatório'),
         lastName: yup.string().min(2, 'O sobrenome deve tconter no mínimo duas letras').required('O sobrenome é obrigatório'),
@@ -26,12 +25,12 @@ export default function RegisterForm() {
         password: yup.string().min(8, 'A senha deve conter no mínimo 8 caracteres').required('A senha é obrigatória'),
         passwordCheck: yup.string().oneOf([yup.ref('password'), null], 'A senha não é igual').required('Confirmação de senha obrigatória')
     })
-
+    // styling used styled components
     const LoginFormGroup = styled.div`
         display: grid;
         align-items: center
     `
-
+    // creating form with formik
     return (
         <React.Fragment>
             <Formik initialValues={{}} onSubmit={handleClickRegister} validationSchema={validationRegister}>

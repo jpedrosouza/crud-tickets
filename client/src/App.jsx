@@ -6,8 +6,8 @@ import Ticket from './pages/Ticket';
 export default function App() {
   return (
     <React.Fragment>
-      {/*<Login />*/}
-      {/*<Register />*/}
+      <Login />
+      {/*<Register />*/} {/* components disabled, awaiting the creation of routes for navigation */}
       {/*<Ticket />*/}
     </React.Fragment>
   );

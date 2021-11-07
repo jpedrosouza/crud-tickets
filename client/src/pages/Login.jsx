@@ -4,7 +4,7 @@ import LoginForm from '../components/form/LoginForm'
 import Footer from '../components/Footer'
 
 export default function Login() {
-
+    // styling used styled components
     const Main = styled.main`
         display: flex;
         justify-content: center;

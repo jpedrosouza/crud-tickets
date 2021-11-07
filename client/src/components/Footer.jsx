@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function Footer() {
-
+    // styling used styled components
     const Text = styled.p`
         @font-face {
             font-family: 'Roboto Light';

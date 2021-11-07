@@ -6,7 +6,7 @@ import * as yup from 'yup'
 import Axios from 'axios'
 
 export default function TicketForm() {
-
+    // getting values ​​from the ticket form
     const handleClick = (values) => {
         Axios.post('http://localhost:3001/ticket', {
             evento: values.evento,
@@ -20,7 +20,7 @@ export default function TicketForm() {
             alert(response.data.msg)
         })
     }
-
+    // start form validations with yup
     const validation = yup.object().shape({
         evento: yup.string().min(2, 'O envento deve conter no mínimo dois caracteres').required('O evento é obrigatório'),
         artista: yup.string().min(2, 'O nome deve deve conter no mínimo dois caracteres').required('O nome é obrigatório'),
@@ -30,7 +30,7 @@ export default function TicketForm() {
         preco: yup.string().required('O preço é orbigatório'),
         url: yup.string().url('Insira uma URL válida'),
     })
-
+    // styling used styled components
     const TicketFormGroup = styled.div`
     @font-face {
         font-family: 'Roboto Light';
@@ -129,7 +129,7 @@ export default function TicketForm() {
             background: #F07B7B;
         }
     `
-
+    // creating form with formik
     return(
         <React.Fragment>
             <Formik initialValues={{}} onSubmit={handleClick} validationSchema={validation}>

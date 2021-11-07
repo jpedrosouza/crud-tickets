@@ -4,7 +4,7 @@ import RegisterForm from '../components/form/RegisterForm'
 import Footer from '../components/Footer'
 
 export default function Register() {
-
+    // styling used styled components
     const Main = styled.main`
         display: flex;
         justify-content: center;
